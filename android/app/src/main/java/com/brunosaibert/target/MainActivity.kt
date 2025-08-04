@@ -1,4 +1,4 @@
-package com.target
+package com.brunosaibert.target
 
 import android.os.Build
 import android.os.Bundle
