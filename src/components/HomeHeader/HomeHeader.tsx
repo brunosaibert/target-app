@@ -7,7 +7,7 @@ import { Separator } from "../Separator"
 import { Summary } from "../Summary"
 
 import { styles } from "./HomeHeader.styles"
-import { HomeHeaderProps, Props } from "./HomeHeader.types"
+import type { HomeHeaderProps, Props } from "./HomeHeader.types"
 
 export function HomeHeader({ data }: Props) {
   return (

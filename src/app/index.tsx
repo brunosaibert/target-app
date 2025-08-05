@@ -1,6 +1,7 @@
 import { View } from "react-native"
 
 import { HomeHeader } from "@/components/HomeHeader"
+import { Target } from "@/components/Target"
 
 const SUMMARY = {
   total: "R$ 2.680,00",
@@ -8,10 +9,20 @@ const SUMMARY = {
   output: { label: "Saídas", value: "-R$ 883.65" },
 }
 
+const TARGETS = [
+  {
+    name: "Comprar uma cadeira ergonômica",
+    percentage: "75%",
+    current: "R$ 900,00",
+    target: "R$ 1.200,00",
+  },
+]
+
 export default function Index() {
   return (
     <View style={{ flex: 1 }}>
       <HomeHeader data={SUMMARY} />
+      <Target data={TARGETS[0]} />
     </View>
   )
 }

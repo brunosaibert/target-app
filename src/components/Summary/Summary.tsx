@@ -1,8 +1,8 @@
 import { View, Text } from "react-native"
 import { MaterialIcons } from "@expo/vector-icons"
 
-import { Props, SummaryProps } from "./Summary.types"
 import { styles } from "./Summary.styles"
+import type { Props, SummaryProps } from "./Summary.types"
 
 export function Summary({ data, icon, isLeft = false }: Props) {
   return (
@@ -16,4 +16,4 @@ export function Summary({ data, icon, isLeft = false }: Props) {
   )
 }
 
-export { SummaryProps }
+export type { SummaryProps }
