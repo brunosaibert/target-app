@@ -1,4 +1,4 @@
-import { ActivityIndicator, Pressable, Text } from "react-native"
+import { ActivityIndicator, TouchableOpacity, Text } from "react-native"
 
 import { colors } from "@/theme"
 
@@ -7,7 +7,12 @@ import type { Props } from "./Button.types"
 
 export function Button({ title, isProcessing = false, ...rest }: Props) {
   return (
-    <Pressable style={styles.container} disabled={isProcessing} {...rest}>
+    <TouchableOpacity
+      style={styles.container}
+      disabled={isProcessing}
+      activeOpacity={0.7}
+      {...rest}
+    >
       <Text style={styles.title}>
         {isProcessing ? (
           <ActivityIndicator size="small" color={colors.white} />
@@ -15,6 +20,6 @@ export function Button({ title, isProcessing = false, ...rest }: Props) {
           title
         )}
       </Text>
-    </Pressable>
+    </TouchableOpacity>
   )
 }

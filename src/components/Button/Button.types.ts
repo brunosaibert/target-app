@@ -1,6 +1,6 @@
-import { PressableProps } from "react-native"
+import { TouchableOpacityProps } from "react-native"
 
-export type Props = PressableProps & {
+export type Props = TouchableOpacityProps & {
   title: string
   isProcessing?: boolean
 }

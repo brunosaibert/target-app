@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from "react-native"
+import { TouchableOpacity, Text, View } from "react-native"
 import { MaterialIcons } from "@expo/vector-icons"
 
 import { colors } from "@/theme"
@@ -29,9 +29,9 @@ export function Transaction({ data, onRemove }: Props) {
           {data.date} {data.description && `• ${data.description}`}
         </Text>
       </View>
-      <Pressable onPress={onRemove}>
+      <TouchableOpacity onPress={onRemove} activeOpacity={0.7}>
         <MaterialIcons name="close" size={18} color={colors.gray[500]} />
-      </Pressable>
+      </TouchableOpacity>
     </View>
   )
 }

@@ -1,4 +1,4 @@
-import type { PressableProps } from "react-native"
+import type { TouchableOpacityProps } from "react-native"
 
 export type TargetProps = {
   id?: string
@@ -8,6 +8,6 @@ export type TargetProps = {
   target: string
 }
 
-export type Props = PressableProps & {
+export type Props = TouchableOpacityProps & {
   data: TargetProps
 }
