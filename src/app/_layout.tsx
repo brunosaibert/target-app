@@ -7,7 +7,7 @@ import {
 } from "@expo-google-fonts/inter"
 
 import { Loading } from "@/components/Loading"
-import { colors } from "@/theme/colors"
+import { colors } from "@/theme"
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
