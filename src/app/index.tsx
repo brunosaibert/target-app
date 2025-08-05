@@ -1,4 +1,4 @@
-import { View } from "react-native"
+import { StatusBar, View } from "react-native"
 import { router } from "expo-router"
 
 import { Button } from "@/components/Button"
@@ -39,6 +39,11 @@ const TARGETS = [
 export default function Index() {
   return (
     <View style={{ flex: 1 }}>
+      <StatusBar
+        barStyle="light-content"
+        translucent
+        backgroundColor="transparent"
+      />
       <HomeHeader data={SUMMARY} />
       <List
         title="Metas"
