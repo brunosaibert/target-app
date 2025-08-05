@@ -19,7 +19,7 @@ export function List<T>({
     <View style={[styles.container, containerStyle]}>
       <Text style={styles.title}>{title}</Text>
       <FlatList
-        data={[]}
+        data={data}
         renderItem={renderItem}
         ItemSeparatorComponent={() => <Separator color={colors.gray[200]} />}
         contentContainerStyle={styles.content}
