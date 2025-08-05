@@ -4,7 +4,7 @@ import Input from "react-native-currency-input"
 import { colors } from "@/theme"
 
 import { styles } from "./CurrencyInput.styles"
-import { Props } from "./CurrencyInput.types"
+import type { Props } from "./CurrencyInput.types"
 
 export function CurrencyInput({ label, ...rest }: Props) {
   return (

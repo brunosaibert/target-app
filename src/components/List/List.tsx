@@ -5,7 +5,7 @@ import { colors } from "@/theme"
 import { Separator } from "../Separator"
 
 import { styles } from "./List.styles"
-import { Props } from "./ListProps.types"
+import type { Props } from "./ListProps.types"
 
 export function List<T>({
   containerStyle,

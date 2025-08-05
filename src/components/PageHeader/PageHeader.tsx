@@ -22,7 +22,7 @@ export function PageHeader({ title, subtitle, rigthButton }: Props) {
           <Pressable onPress={() => rigthButton.onPress()}>
             <MaterialIcons
               name={rigthButton.icon}
-              size={32}
+              size={24}
               color={colors.gray[500]}
             />
           </Pressable>

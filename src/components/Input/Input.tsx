@@ -3,7 +3,7 @@ import { Text, TextInput, View } from "react-native"
 import { colors } from "@/theme"
 
 import { styles } from "./Input.styles"
-import { Props } from "./Input.types"
+import type { Props } from "./Input.types"
 
 export function Input({ label, ...rest }: Props) {
   return (
