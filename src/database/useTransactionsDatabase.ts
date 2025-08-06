@@ -3,6 +3,7 @@ import { useSQLiteContext } from "expo-sqlite"
 import type {
   TransactionCreate,
   TransactionResponse,
+  SummaryResponse,
 } from "./useTransactionsDatabase.types"
 
 export function useTransactionsDatabase() {
@@ -42,11 +43,21 @@ export function useTransactionsDatabase() {
     await database.runAsync("DELETE FROM transactions WHERE id = ?", id)
   }
 
+  function summary() {
+    return database.getFirstAsync<SummaryResponse>(`
+        SELECT
+          COALESCE(SUM(CASE WHEN amount > 0 THEN amount ELSE 0 END), 0) AS input,
+          COALESCE(SUM(CASE WHEN amount < 0 THEN amount ELSE 0 END), 0) AS output
+        FROM transactions
+      `)
+  }
+
   return {
     create,
     listByTargetId,
     remove,
+    summary,
   }
 }
 
-export type { TransactionCreate, TransactionResponse }
+export type { TransactionCreate, TransactionResponse, SummaryResponse }

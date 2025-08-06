@@ -12,3 +12,8 @@ export type TransactionResponse = {
   created_at: Date
   updated_at: Date
 }
+
+export type SummaryResponse = {
+  input: number
+  output: number
+}
