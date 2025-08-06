@@ -1,8 +1,6 @@
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/brunosaibert/target-app?color=%2304D361&style=for-the-badge">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/brunosaibert/target-app?style=for-the-badge">
-
   <a href="https://github.com/brunosaibert/target-app/commits/main">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/brunosaibert/target-app?style=for-the-badge">
   </a>
@@ -20,6 +18,7 @@
 <h1 align="center">
   Target - Controle Financeiro
   <br />
+  <br />
   <img alt="target-app" title="#target-app" src="https://raw.githubusercontent.com/brunosaibert/target-app/main/assets/docs/icon.png" width="200px" />
 </h1>
 
@@ -28,7 +27,7 @@
  <a href="#--features">Features</a> •
  <a href="#--como-executar-o-projeto">Como executar</a> •
  <a href="#--layout">Layout</a> •
- <a href="#--tecnologias">Tecnologias</a> •
+ <a href="#--tech-stack">Tech Stack</a> •
  <a href="#--autor">Autor</a> •
  <a href="#--licença">Licença</a>
 </p>
@@ -66,7 +65,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 $ git clone https://github.com/brunosaibert/target-app.git
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd target
+$ cd target-app
 
 # Instale as dependências
 $ npm install
