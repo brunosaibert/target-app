@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react"
 import { Alert, View } from "react-native"
 import { router, useFocusEffect, useLocalSearchParams } from "expo-router"
+import dayjs from "dayjs"
 
 import { Button } from "@/components/Button"
 import { List } from "@/components/List"
@@ -58,7 +59,7 @@ export default function InProgress() {
           type:
             item.amount > 0 ? TransactionTypes.Input : TransactionTypes.Output,
           description: item.observation,
-          date: String(item.created_at),
+          date: dayjs(item.created_at).format("DD/MM/YYYY [às] HH:mm"),
         }))
       )
     } catch (error) {
