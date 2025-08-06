@@ -1,6 +1,9 @@
 import { useSQLiteContext } from "expo-sqlite"
 
-import type { TargetCreateProps } from "./useTargetDatabase.types"
+import type {
+  TargetCreateProps,
+  TargetResponse,
+} from "./useTargetDatabase.types"
 
 export function useTargetDatabase() {
   const database = useSQLiteContext()
@@ -16,7 +19,27 @@ export function useTargetDatabase() {
     })
   }
 
-  return { create }
+  function listBySavedValue() {
+    return database.getAllAsync<TargetResponse>(`
+        SELECT
+          targets.id,
+          targets.name,
+          targets.amount,
+          COALESCE(SUM(transactions.amount), 0) AS current,
+          COALESCE((SUM(transactions.amount) / targets.amount) * 100, 0) AS percentage,
+          targets.created_at,
+          targets.updated_at
+        FROM targets
+        LEFT JOIN transactions ON targets.id = transactions.target_id
+        GROUP BY targets.id, targets.name, targets.amount
+        ORDER BY current DESC
+      `)
+  }
+
+  return {
+    create,
+    listBySavedValue,
+  }
 }
 
-export type { TargetCreateProps }
+export type { TargetResponse, TargetCreateProps }
