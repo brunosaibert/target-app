@@ -34,7 +34,7 @@ export default function InProgress() {
   const params = useLocalSearchParams<{ id: string }>()
 
   return (
-    <View style={{ flex: 1, padding: 24, paddingBottom: 48, gap: 32 }}>
+    <View style={{ flex: 1, padding: 24, paddingBottom: 32, gap: 32 }}>
       <PageHeader
         title="Apple Watch"
         rigthButton={{

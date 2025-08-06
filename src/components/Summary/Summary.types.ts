@@ -12,5 +12,5 @@ export type Props = {
     name: keyof typeof MaterialIcons.glyphMap
     color: ColorValue
   }
-  isLeft?: boolean
+  isRight?: boolean
 }

@@ -58,7 +58,7 @@ export default function Index() {
         emptyMessage="Nenhuma meta. Toque em nova meta para criar."
         containerStyle={{ paddingHorizontal: 24 }}
       />
-      <View style={{ padding: 24, paddingBottom: 48 }}>
+      <View style={{ padding: 24, paddingBottom: 32 }}>
         <Button title="Nova meta" onPress={() => router.navigate("/target")} />
       </View>
     </View>

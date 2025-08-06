@@ -4,10 +4,10 @@ import { MaterialIcons } from "@expo/vector-icons"
 import { styles } from "./Summary.styles"
 import type { Props, SummaryProps } from "./Summary.types"
 
-export function Summary({ data, icon, isLeft = false }: Props) {
+export function Summary({ data, icon, isRight = false }: Props) {
   return (
     <View style={styles.container}>
-      <View style={[styles.header, isLeft && { justifyContent: "flex-end" }]}>
+      <View style={[styles.header, isRight && { justifyContent: "flex-end" }]}>
         <MaterialIcons name={icon.name} size={16} color={icon.color} />
         <Text style={styles.label}>{data.label}</Text>
       </View>
