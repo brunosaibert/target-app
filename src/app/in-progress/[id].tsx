@@ -84,7 +84,7 @@ export default function InProgress() {
         title={details.name}
         rigthButton={{
           icon: "edit",
-          onPress: () => {},
+          onPress: () => router.navigate(`/target?id=${params.id}`),
         }}
       />
       <Progress data={details} />

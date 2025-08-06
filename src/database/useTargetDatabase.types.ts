@@ -3,6 +3,10 @@ export type TargetCreateProps = {
   amount: number
 }
 
+export type TargetUpdateProps = TargetCreateProps & {
+  id: number
+}
+
 export type TargetResponse = {
   id: number
   name: string

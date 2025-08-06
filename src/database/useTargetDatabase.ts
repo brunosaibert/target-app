@@ -2,6 +2,7 @@ import { useSQLiteContext } from "expo-sqlite"
 
 import type {
   TargetCreateProps,
+  TargetUpdateProps,
   TargetResponse,
 } from "./useTargetDatabase.types"
 
@@ -52,11 +53,28 @@ export function useTargetDatabase() {
       `)
   }
 
+  async function update(data: TargetUpdateProps) {
+    const statement = await database.prepareAsync(`
+        UPDATE targets SET
+          name = $name,
+          amount = $amount,
+          updated_at = CURRENT_TIMESTAMP
+        WHERE id = $id
+      `)
+
+    statement.executeAsync({
+      $id: data.id,
+      $name: data.name,
+      $amount: data.amount,
+    })
+  }
+
   return {
     create,
+    update,
     listBySavedValue,
     show,
   }
 }
 
-export type { TargetResponse, TargetCreateProps }
+export type { TargetResponse, TargetCreateProps, TargetUpdateProps }
