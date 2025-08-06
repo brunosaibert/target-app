@@ -1,6 +1,9 @@
 import { useSQLiteContext } from "expo-sqlite"
 
-import type { TransactionCreate } from "./useTransactionsDatabase.types"
+import type {
+  TransactionCreate,
+  TransactionResponse,
+} from "./useTransactionsDatabase.types"
 
 export function useTransactionsDatabase() {
   const database = useSQLiteContext()
@@ -20,9 +23,25 @@ export function useTransactionsDatabase() {
     })
   }
 
+  function listByTargetId(id: number) {
+    return database.getAllAsync<TransactionResponse>(`
+        SELECT
+          id,
+          target_id,
+          amount,
+          observation,
+          created_at,
+          updated_at
+        FROM transactions
+        WHERE target_id = ${id}
+        ORDER BY created_at DESC
+      `)
+  }
+
   return {
     create,
+    listByTargetId,
   }
 }
 
-export type { TransactionCreate }
+export type { TransactionCreate, TransactionResponse }
