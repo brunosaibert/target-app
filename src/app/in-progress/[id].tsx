@@ -113,7 +113,7 @@ export default function InProgress() {
   }
 
   return (
-    <View style={{ flex: 1, padding: 24, paddingBottom: 32, gap: 32 }}>
+    <View style={{ flex: 1, padding: 24, paddingBottom: 40, gap: 32 }}>
       <StatusBar
         barStyle="dark-content"
         translucent
